@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{! Document Settings }}
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TF2Stadium - blog</title>
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <script src="/assets/js/site.js"></script>
+    
+    {{! Responsive Meta Tags }}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    
+    {{ghost_head}}
+  </head>
+  <body class="{{body_class}}">    
+    {{{navigation}}}
+    <main class="container">
+      {{{body}}}
+    {{#if pagination.prev}}
+      {{pagination}}
+      {{else}} {{#if pagination.next}}
+        {{pagination}}
+      {{/if}}
+    {{/if}}
+    </main>
+  </body>
+  
+</html>

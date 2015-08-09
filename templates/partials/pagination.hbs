@@ -1,0 +1,15 @@
+<nav class="nav-wrapper">
+  <div>
+    {{#if prev}}
+      <a href="{{page_url prev}}" class="left">
+        Newer Posts
+      </a>
+    {{/if}}
+    <span>Page {{page}} of {{pages}}</span>
+    {{#if next}}
+      <a href="{{page_url next}}" class="right">
+          Older posts
+      </a>
+    {{/if}}
+  </div>
+</nav>

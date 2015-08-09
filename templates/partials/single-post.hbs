@@ -1,0 +1,22 @@
+<article class="card">
+  <header {{#if image}}class="card-image"{{/if}}>
+    <img src="{{image}}">
+    <a href="{{url}}"><h1>{{title}}</h1></a>
+  </header>
+  <div class="card-content">
+    {{content}}
+    <a class="hidden">Steam group discussion</a>
+  </div>
+  <div class="card-info">
+    <time>{{date format='dddd DD MMM YYYY'}}</time>
+
+    {{#if tags}}
+      <div>
+        TAGS:
+      {{tags separator=""}}
+      </div>
+    {{else}}
+      NO TAGS
+    {{/if}}
+  </div>
+</article>

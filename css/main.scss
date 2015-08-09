@@ -1,0 +1,284 @@
+$font-size-h1: 3;
+
+$h1-fontsize: #{$font-size-h1}rem;
+$h2-fontsize: #{($font-size-h1 - 1)*.8 + 1}rem;
+$h3-fontsize: #{($font-size-h1 - 1)*.6 + 1}rem;
+$h4-fontsize: #{($font-size-h1 - 1)*.4 + 1}rem;
+$h5-fontsize: #{($font-size-h1 - 1)*.2 + 1}rem;
+$h6-fontsize: 1rem !default;
+
+$primary-color: #9cf;
+$secondary-color: #cceeff;
+
+$button-color: $primary-color;
+
+
+//import this after we set the heading sizes
+@import "../../bower_components/materialize/sass/materialize.scss";
+
+/* SETTINGS */
+$card-padding:        5rem;
+
+/* FONTS */
+
+@import url(https://fonts.googleapis.com/css?family=PT+Sans|Montserrat|Material+Icons);
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans|Roboto|Lato|Slabo+27px|Roboto+Condensed|Oswald:300|Source+Sans+Pro|PT+Sans|Noto+Sans);
+
+@font-face {
+  font-family: Norwester;
+  src: url(../fonts/norwester.otf) format(opentype);
+}
+
+/* LAYOUT */
+
+html {  
+  @media only screen and (min-width: 0) {
+    font-size: 12px;
+  }
+
+  @media only screen and (min-width: $medium-screen) {
+    font-size: 14px;
+  }
+
+  @media only screen and (min-width: $large-screen) {
+    font-size: 14px;
+  }
+}
+
+body {
+  background: #eee;
+  font-family: PT sans, sans-serif;
+  color: #555;
+  background: {
+    //image: url(../images/header-bg.jpg);
+    size: cover;
+    repeat: no-repeat;
+    attachment: fixed;
+  }
+}
+
+nav {
+  @extend .white;
+  margin-bottom: 2rem;
+  color: #555;
+  
+  a:not(#title) {
+    @extend .btn;
+  }
+}
+
+.nav-wrapper {  
+  text-align: center;
+  padding: 0 $card-padding;
+  position: relative;
+  
+  
+  @media #{$large-and-up} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }    
+
+  &>div {
+    position: relative;
+    width: 100%;
+  }
+
+  span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 70rem;
+  width: 90%;
+  
+  @media #{$medium-and-up} {
+    width: 85%;
+  }
+
+  @media #{$large-and-up} {
+    width: 70%;
+  }
+}
+
+#title {
+  font-family: Norwester, Montserrat, sans-serif;
+  font-size: $h2-fontsize;
+  font-weight: normal;
+  color: $primary-color;
+  padding: 0 2rem;
+  
+  @media #{$large-and-up} {
+    margin-left: -$card-padding;
+  }   
+  
+  img {
+    height: .94em;
+    margin: -.06em 3px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+.card {
+  overflow: visible;
+  margin: 2rem auto;
+  
+  .card-content { //has to be nested for specificity
+    padding: $card-padding/2 $card-padding;
+  }
+}
+
+.card-info {
+  width: 100%;
+  padding: $card-padding/2 $card-padding;
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;  
+  
+  a {
+    @extend .waves-effect;
+    @extend .btn;
+    margin: .25rem;
+  }
+  
+  span {
+    margin-bottom: 1rem;
+  }
+}
+
+header {
+  img {
+    display: none;
+  }
+  
+  a {
+    margin-top: 2rem;
+    padding: 0 2rem 0 $card-padding;
+    color: #fff;
+    background: $primary-color;
+  }
+}
+
+.card-image {
+  max-height: 25rem;
+  overflow: hidden;
+  
+  img {
+    display: block;
+  }
+  
+  a {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+  }
+}
+
+p {
+  @extend .flow-text;
+}
+
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+img {
+  @extend .responsive-img;
+  cursor: pointer;
+  
+  &.initialized.active {
+    float: none;
+    max-width: none;
+    max-height: none;
+  }
+}
+
+@media only screen and (min-width: 50rem) {
+  .card-info {
+    flex-direction: row;
+    
+    span {
+      margin-bottom: 0;
+    }
+  }
+}
+
+links {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  a {
+    @extend .waves-effect;
+    @extend .z-depth-1;
+    margin: .3rem;
+    width: 14rem;
+    height: 14rem;
+    text-align: center;
+    padding: 2rem;
+    color: #000;
+    flex-grow: 1;
+    flex-shrink: 0;
+    
+    background: {
+      repeat: no-repeat;
+      position: 50% 70%;
+      size: auto 3.5rem;
+    }
+    
+    &[href*="steam"] {
+      background-image: url(../images/steam.svg);
+    }
+    
+    &[href*="teamfortress.tv"],
+    &[href*="tf.gg"] {
+      background-image: url(../images/tftv.svg);
+    }
+    
+    &[href*="reddit"],
+    &[href*="redd.it"] {
+      background-image: url(../images/reddit.svg);
+    }
+    
+    &[href*="twitter"] {
+      background-image: url(../images/twitterlogo.svg);
+    }
+    
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media only screen and (min-width: 75rem) {
+}
+
+@media only screen and (min-width: 100rem) {
+}
