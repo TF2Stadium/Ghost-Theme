@@ -2,11 +2,15 @@
               FONT SETTINGS
  ======================================= */
 
-@import url(https://fonts.googleapis.com/css?family=PT+Sans|Montserrat|Material+Icons);
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Raleway:400,700);
 
 @font-face {
   font-family: Norwester;
   src: url(../fonts/norwester.otf) format(opentype);
+}
+
+body {
+  font-family: Raleway, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -16,6 +20,10 @@ h1, h2, h3, h4, h5, h6 {
     weight: bold;
   }
   text-rendering: optimizeLegibility;
+}
+
+strong {
+  font-weight: 700;
 }
 
 p, li {
