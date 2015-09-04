@@ -13,18 +13,6 @@
       margin: 1em 0;
     }
   }
-  
-  ul, ol {
-    padding-left: 2*$small-padding;
-
-    & > ul {
-      padding-left: $small-padding;
-    }
-  }
-
-  ul > li {
-    list-style-type: circle;
-  }
 }
 
 .card-info {
@@ -93,6 +81,34 @@ img {
     max-width: none;
     max-height: none;
   }
+}
+
+ul, ol {
+  padding-left: 2 * $small-padding;
+
+  ul, ol {
+    padding-left: $small-padding;
+  }
+
+  & > li {
+    list-style-type: none;
+    counter-increment: step-counter;
+
+    &:before {
+      display: inline-block;
+      margin: 0 1rem 0 -2rem;
+      font-size: .7em;
+      transform: translateY(-.2rem);
+    }
+  }
+}
+
+ul > li:before {
+  content: "○";
+}
+
+ol > li:before {
+  content: counter(step-counter);
 }
 
 links {
