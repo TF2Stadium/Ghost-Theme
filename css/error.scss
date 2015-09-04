@@ -1,0 +1,33 @@
+/*======================================
+                404 PAGE
+ ======================================= */
+
+.error-body {
+  @include flex-box (column, stretch, stretch);
+  height: 100%;
+}
+
+.error {
+  @include flex-box (column, center, stretch);
+  flex: 1;
+}
+
+.error-image {
+  @extend .z-depth-1;
+  flex: 1;
+  background: {
+    image: url(/assets/images/404.jpg);
+    size: cover;
+    repeat: no-repeat;
+    position: 50% 65%;
+  }
+}
+
+.error-text {
+  @include flex-box (column, center, center);
+  height: 15rem;
+  
+  p {
+    text-align: center;
+  }
+}

@@ -1,0 +1,145 @@
+/*======================================
+                 CARD
+ ======================================= */
+
+.card {
+  overflow: visible;
+  margin: 2rem auto;
+  
+  .card-content { //has to be nested for specificity
+    padding: $small-padding $big-padding;
+    
+    p {
+      margin: 1em 0;
+    }
+  }
+  
+  ul, ol {
+    padding-left: 2*$small-padding;
+
+    & > ul {
+      padding-left: $small-padding;
+    }
+  }
+
+  ul > li {
+    list-style-type: circle;
+  }
+}
+
+.card-info {
+  @include flex-box (column, space-between, center);
+  width: 100%;
+  padding: $small-padding $big-padding;
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  text-align: center;
+  
+  & > div a {
+    @extend .waves-effect;
+    @extend .btn;
+    margin: .25rem;
+  }
+  
+  span {
+    margin-bottom: 1rem;
+  }
+}
+
+header {
+  img {
+    //gets overriden by .card-image if there's an img to show
+    display: none;
+  }
+  
+  a {
+    margin-top: $small-padding;
+    padding: 0 $small-padding 0 $big-padding;
+    color: white;
+    background: $primary-color;
+  }
+}
+
+.card-image {
+  overflow: hidden;
+  
+  img {
+    display: block;
+  }
+  
+  a {
+    left: 0;
+    width: 100%;
+    margin: 0;
+    
+    @media #{$medium-and-up} {
+      bottom: $small-padding;
+      position: absolute;
+      width: auto;
+    }
+  }
+
+  @media #{$medium-and-up} {
+    max-height: 25rem;
+  }
+}
+
+img {
+  @extend .responsive-img;
+  cursor: pointer;
+  
+  &.initialized.active {
+    //materialbox doesn't like floating imgs
+    float: none;
+    max-width: none;
+    max-height: none;
+  }
+}
+
+links {
+  @include flex-box (row, center, center);
+  flex-wrap: wrap;
+  width: 100%;
+  
+  a {
+    @extend .waves-effect;
+    @extend .z-depth-1;
+    margin: .3rem;
+    width: 14rem;
+    height: 14rem;
+    text-align: center;
+    padding: 2rem;
+    color: #000;
+    flex-grow: 1;
+    flex-shrink: 0;
+    background: {
+      repeat: no-repeat;
+      position: 50% 70%;
+      size: auto 3.5rem;
+    }
+    
+    /*  Changes the background depending on
+        where the href points               */
+    &:hover {
+      @extend .z-depth-2;
+      background-color: $secondary-color;
+    }
+    
+    &[href*="steam"] {
+      background-image: url(../images/steam.svg);
+    }
+    
+    &[href*="teamfortress.tv"],
+    &[href*="tf.gg"] {
+      background-image: url(../images/tftv.png);
+    }
+    
+    &[href*="reddit"],
+    &[href*="redd.it"] {
+      background-image: url(../images/reddit.svg);
+    }
+    
+    &[href*="twitter"] {
+      background-image: url(../images/twitterlogo.svg);
+    }
+  }
+}

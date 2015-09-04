@@ -1,0 +1,53 @@
+/*======================================
+        NAVIGATION AND PAGINATION
+ ======================================= */
+
+nav {
+  @extend .white;
+  margin-bottom: $small-padding;
+  color: $font-color;
+  
+  a:not(#title) {
+    @extend .btn;
+  }
+}
+
+.nav-wrapper {  
+  text-align: center;
+  position: relative;
+
+  &>div {
+    position: relative;
+    width: 100%;
+  }
+
+  span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }  
+  
+  @media #{$large-and-up} {
+    padding: 0 $big-padding;    
+  }
+  
+  @media #{$large-and-up} {
+    @include flex-box (row, space-between, center);
+  }   
+}
+
+#title {
+  padding: 0 $small-padding;
+  
+  @media #{$large-and-up} {
+    //Aligns the title with the cards
+    margin-left: -$big-padding;
+  }   
+  
+  img {
+    //Aligns the logo vertically with the text
+    height: .94em;
+    margin: -.06em 3px;
+  }
+}

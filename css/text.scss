@@ -1,0 +1,32 @@
+/*======================================
+              FONT SETTINGS
+ ======================================= */
+
+@import url(https://fonts.googleapis.com/css?family=PT+Sans|Montserrat|Material+Icons);
+
+@font-face {
+  font-family: Norwester;
+  src: url(../fonts/norwester.otf) format(opentype);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  //Header sizing is done in main.css before Materialize is imported
+  font: {
+    family: Montserrat, sans-serif;
+    weight: bold;
+  }
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  @extend .flow-text;
+}
+
+#title {
+  font: {
+    family: Norwester, Montserrat, sans-serif;
+    size: $h2-fontsize;
+    weight: normal;
+  }
+  color: $primary-color;
+}
