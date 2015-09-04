@@ -3,6 +3,8 @@
 This repository contains the source files required to create the final theme.
 You can either compile the theme on your own or head to [our repository](https://github.com/TF2Stadium/Ghost-Environment) for a quick installation of a developer enviroment.
 
+You can also download our latest compiled release at https://github.com/TF2Stadium/Ghost-Theme/releases.
+
 The theme uses [materialize](http://materializecss.com/) as the CSS framework.
 
 ## Files
